@@ -65,9 +65,14 @@ class RecordingViewController: UIViewController {
         
         // play/pause image
         let playImage = UIImage(systemName: "play.circle.fill", withConfiguration: configuration)
-        playButton.setImage(playImage, for: .normal)
+        let whitePlay = playImage?.withTintColor(.white, renderingMode: .alwaysOriginal)
         let pauseImage = UIImage(systemName: "pause.circle.fill", withConfiguration: configuration)
-        playButton.setImage(pauseImage, for: .selected)
+        let whitePause = pauseImage?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        playButton.setImage(whitePlay, for: .normal)
+        playButton.setImage(whitePause, for: .selected)
+        
+        // slider
+        timeSlider.thumbTintColor = .barColor
     }
     
     func updateViews() {

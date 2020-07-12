@@ -35,7 +35,7 @@ public class AudioVisualizer: UIView {
     }
     
     /// The color of a bar.
-    @IBInspectable public var barColor: UIColor = .systemGray {
+    @IBInspectable public var barColor: UIColor = .barColor {
         didSet {
             for bar in bars {
                 bar.backgroundColor = barColor
