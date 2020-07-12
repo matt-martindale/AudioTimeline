@@ -9,22 +9,26 @@
 import UIKit
 
 class RecordingViewController: UIViewController {
+    
+    @IBOutlet weak var timeElapsedLabel: UILabel!
+    @IBOutlet weak var timeSlider: UISlider!
+    @IBOutlet weak var timeRemainingLabel: UILabel!
+    @IBOutlet weak var playRecordButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setUpViews()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setUpViews() {
+        let configuration = UIImage.SymbolConfiguration(pointSize: 60)
+        let micImage = UIImage(systemName: "mic.circle.fill", withConfiguration: configuration)
+        playRecordButton.setImage(micImage, for: .normal)
+        playRecordButton.contentHorizontalAlignment = .center
+        playRecordButton.contentVerticalAlignment = .center
     }
-    */
+
+   
 
 }
