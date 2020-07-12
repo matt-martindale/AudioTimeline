@@ -74,8 +74,8 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Recording" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hDl-0c-u0q">
-                                <rect key="frame" x="76.5" y="50" width="261" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <rect key="frame" x="73" y="50" width="268" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -88,11 +88,14 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EVm-x6-qWB" userLabel="Time Slider">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EVm-x6-qWB" userLabel="Time Slider">
                                         <rect key="frame" x="59" y="0.0" width="276" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="J3c-Me-XVe"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="updateTimeSlider:" destination="q5g-GU-IQR" eventType="valueChanged" id="txq-ps-wix"/>
+                                        </connections>
                                     </slider>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-Fu-NA0" userLabel="Time Remaining Label">
                                         <rect key="frame" x="348" y="0.0" width="46" height="30"/>
@@ -102,35 +105,61 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9m-TP-gm0" userLabel="Play/Record Button">
-                                <rect key="frame" x="182" y="738" width="50" height="50"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BrT-eO-b2i">
+                                <rect key="frame" x="147" y="738" width="120" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkx-HV-CZa" userLabel="Play Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="dkx-HV-CZa" secondAttribute="height" multiplier="1:1" id="65r-ZP-GyL"/>
+                                            <constraint firstAttribute="height" constant="50" id="j0F-Wr-gn7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <state key="normal" title="Button" image="play.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="togglePlayback:" destination="q5g-GU-IQR" eventType="touchUpInside" id="Qtd-Yh-fw5"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9m-TP-gm0" userLabel="Record Button">
+                                        <rect key="frame" x="70" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="4Gp-V6-oio"/>
+                                            <constraint firstAttribute="width" secondItem="S9m-TP-gm0" secondAttribute="height" multiplier="1:1" id="Xu4-47-6J6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                        <state key="normal" title="Button" image="mic.circle.fill" catalog="system"/>
+                                        <state key="selected" image="stop.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="recordButtonTapped:" destination="q5g-GU-IQR" eventType="touchUpInside" id="Si6-MR-ON1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="4Gp-V6-oio"/>
-                                    <constraint firstAttribute="width" secondItem="S9m-TP-gm0" secondAttribute="height" multiplier="1:1" id="Xu4-47-6J6"/>
+                                    <constraint firstItem="dkx-HV-CZa" firstAttribute="width" secondItem="dkx-HV-CZa" secondAttribute="height" multiplier="1:1" id="xTC-un-5va"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <state key="normal" title="Button" image="mic.circle.fill" catalog="system"/>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="94b-d0-VXi" firstAttribute="top" secondItem="hDl-0c-u0q" secondAttribute="bottom" constant="50" id="3Vj-lM-1Ff"/>
-                            <constraint firstItem="knf-YD-Doi" firstAttribute="bottom" secondItem="S9m-TP-gm0" secondAttribute="bottom" constant="20" id="51h-Zj-A2l"/>
                             <constraint firstItem="y2E-5d-i2i" firstAttribute="top" secondItem="94b-d0-VXi" secondAttribute="bottom" constant="50" id="7C7-4T-Uj1"/>
                             <constraint firstItem="knf-YD-Doi" firstAttribute="trailing" secondItem="94b-d0-VXi" secondAttribute="trailing" id="7Jz-Vg-DD0"/>
                             <constraint firstItem="hDl-0c-u0q" firstAttribute="top" secondItem="knf-YD-Doi" secondAttribute="top" constant="50" id="FwT-Pq-6uH"/>
+                            <constraint firstItem="BrT-eO-b2i" firstAttribute="centerX" secondItem="0vB-5P-86A" secondAttribute="centerX" id="JKT-rG-cB5"/>
+                            <constraint firstItem="BrT-eO-b2i" firstAttribute="top" secondItem="y2E-5d-i2i" secondAttribute="bottom" constant="20" id="POU-gf-rK5"/>
                             <constraint firstItem="hDl-0c-u0q" firstAttribute="centerX" secondItem="0vB-5P-86A" secondAttribute="centerX" id="SuW-LE-rVh"/>
                             <constraint firstItem="y2E-5d-i2i" firstAttribute="leading" secondItem="knf-YD-Doi" secondAttribute="leading" constant="10" id="ZlH-5B-HpM"/>
-                            <constraint firstItem="S9m-TP-gm0" firstAttribute="top" secondItem="y2E-5d-i2i" secondAttribute="bottom" constant="20" id="aE5-ag-vz1"/>
-                            <constraint firstItem="S9m-TP-gm0" firstAttribute="centerX" secondItem="0vB-5P-86A" secondAttribute="centerX" id="krq-uO-O3I"/>
                             <constraint firstAttribute="trailing" secondItem="y2E-5d-i2i" secondAttribute="trailing" constant="10" id="sRc-sQ-YMz"/>
                             <constraint firstItem="94b-d0-VXi" firstAttribute="leading" secondItem="knf-YD-Doi" secondAttribute="leading" id="tbu-o0-E1F"/>
+                            <constraint firstItem="knf-YD-Doi" firstAttribute="bottom" secondItem="BrT-eO-b2i" secondAttribute="bottom" constant="20" id="vKS-dY-FvD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="knf-YD-Doi"/>
                     </view>
                     <navigationItem key="navigationItem" id="dW8-O5-2Ix"/>
                     <connections>
-                        <outlet property="playRecordButton" destination="S9m-TP-gm0" id="341-k5-ToW"/>
+                        <outlet property="audioVisualizer" destination="94b-d0-VXi" id="wEG-G2-O9H"/>
+                        <outlet property="playButton" destination="dkx-HV-CZa" id="ClZ-F5-skQ"/>
+                        <outlet property="recordButton" destination="S9m-TP-gm0" id="hj6-uh-Tkj"/>
                         <outlet property="timeElapsedLabel" destination="2AN-Xj-8L7" id="1hV-qU-RpD"/>
                         <outlet property="timeRemainingLabel" destination="8FR-Fu-NA0" id="rzR-YZ-uuO"/>
                         <outlet property="timeSlider" destination="EVm-x6-qWB" id="E7M-Lp-RPS"/>
@@ -162,5 +191,7 @@
     <resources>
         <image name="mic.circle.fill" catalog="system" width="128" height="121"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <image name="play.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="stop.circle.fill" catalog="system" width="128" height="121"/>
     </resources>
 </document>
