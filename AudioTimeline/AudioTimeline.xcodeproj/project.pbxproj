@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		C906D1F224BBBAC500A2FC66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D1F124BBBAC500A2FC66 /* AppDelegate.swift */; };
 		C906D1F424BBBAC500A2FC66 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D1F324BBBAC500A2FC66 /* SceneDelegate.swift */; };
-		C906D1F624BBBAC500A2FC66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D1F524BBBAC500A2FC66 /* ViewController.swift */; };
 		C906D1F924BBBAC500A2FC66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C906D1F724BBBAC500A2FC66 /* Main.storyboard */; };
 		C906D1FB24BBBAC700A2FC66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C906D1FA24BBBAC700A2FC66 /* Assets.xcassets */; };
 		C906D1FE24BBBAC700A2FC66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C906D1FC24BBBAC700A2FC66 /* LaunchScreen.storyboard */; };
+		C906D20624BBBBE300A2FC66 /* AudioCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20524BBBBE300A2FC66 /* AudioCommentsTableViewController.swift */; };
+		C906D20924BBBCB800A2FC66 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20824BBBCB800A2FC66 /* RecordingViewController.swift */; };
+		C906D20B24BBBE7500A2FC66 /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */; };
+		C906D20D24BBBEBB00A2FC66 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C906D1EE24BBBAC500A2FC66 /* AudioTimeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioTimeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C906D1F124BBBAC500A2FC66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C906D1F324BBBAC500A2FC66 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C906D1F524BBBAC500A2FC66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C906D1F824BBBAC500A2FC66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C906D1FA24BBBAC700A2FC66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C906D1FD24BBBAC700A2FC66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C906D1FF24BBBAC700A2FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C906D20524BBBBE300A2FC66 /* AudioCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentsTableViewController.swift; sourceTree = "<group>"; };
+		C906D20824BBBCB800A2FC66 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
+		C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
+		C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +64,32 @@
 			children = (
 				C906D1F124BBBAC500A2FC66 /* AppDelegate.swift */,
 				C906D1F324BBBAC500A2FC66 /* SceneDelegate.swift */,
-				C906D1F524BBBAC500A2FC66 /* ViewController.swift */,
 				C906D1F724BBBAC500A2FC66 /* Main.storyboard */,
 				C906D1FA24BBBAC700A2FC66 /* Assets.xcassets */,
 				C906D1FC24BBBAC700A2FC66 /* LaunchScreen.storyboard */,
 				C906D1FF24BBBAC700A2FC66 /* Info.plist */,
+				C906D20724BBBBEA00A2FC66 /* View Controllers */,
+				C906D20E24BBBED000A2FC66 /* Resources */,
 			);
 			path = AudioTimeline;
+			sourceTree = "<group>";
+		};
+		C906D20724BBBBEA00A2FC66 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C906D20524BBBBE300A2FC66 /* AudioCommentsTableViewController.swift */,
+				C906D20824BBBCB800A2FC66 /* RecordingViewController.swift */,
+				C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		C906D20E24BBBED000A2FC66 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +163,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C906D1F624BBBAC500A2FC66 /* ViewController.swift in Sources */,
+				C906D20924BBBCB800A2FC66 /* RecordingViewController.swift in Sources */,
+				C906D20624BBBBE300A2FC66 /* AudioCommentsTableViewController.swift in Sources */,
 				C906D1F224BBBAC500A2FC66 /* AppDelegate.swift in Sources */,
+				C906D20B24BBBE7500A2FC66 /* ListenViewController.swift in Sources */,
+				C906D20D24BBBEBB00A2FC66 /* AudioVisualizer.swift in Sources */,
 				C906D1F424BBBAC500A2FC66 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AudioTimeline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,6 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = AudioTimeline/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
