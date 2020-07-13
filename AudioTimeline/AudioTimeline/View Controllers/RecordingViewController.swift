@@ -12,6 +12,7 @@ import AVFoundation
 class RecordingViewController: UIViewController {
     
     // MARK: - IBOutlets
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeElapsedLabel: UILabel!
     @IBOutlet weak var timeSlider: UISlider!
     @IBOutlet weak var timeRemainingLabel: UILabel!
@@ -45,12 +46,45 @@ class RecordingViewController: UIViewController {
     var recordingURL: URL?
     var audioRecorder: AVAudioRecorder?
     var recordingController: RecordingController?
+    var selectedRecording: Recording?
 
     // MARK: - View Controller Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpViews()
-        print(recordingController?.recordings)
+        
+        if let recording = selectedRecording {
+            detailSetupViews(recording: recording)
+        } else {
+            setUpViews()
+        }
+    }
+    
+    func detailSetupViews(recording: Recording) {
+        titleLabel.text = recording.title
+        saveButton.isHidden = true
+        recordButton.isHidden = true
+        playButton.isEnabled = true
+        loadRecording(recording: recording)
+        
+        let configuration = UIImage.SymbolConfiguration(pointSize: 60)
+        let playImage = UIImage(systemName: "play.circle.fill", withConfiguration: configuration)
+        let whitePlay = playImage?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        let pauseImage = UIImage(systemName: "pause.circle.fill", withConfiguration: configuration)
+        let whitePause = pauseImage?.withTintColor(.white, renderingMode: .alwaysOriginal)
+        playButton.setImage(whitePlay, for: .normal)
+        playButton.setImage(whitePause, for: .selected)
+    }
+    
+    func loadRecording(recording: Recording) {
+        let recordingURL: URL = recording.url
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: recordingURL)
+        } catch {
+            print(recordingURL.absoluteString)
+            preconditionFailure("Failure to load audio file: \(error)")
+            
+        }
     }
     
     func setUpViews() {
@@ -205,9 +239,6 @@ class RecordingViewController: UIViewController {
             audioRecorder?.delegate = self
             audioRecorder?.isMeteringEnabled = true
             audioRecorder?.record()
-            
-            
-            
             updateViews()
             startTimer()
         } catch {
@@ -294,7 +325,7 @@ class RecordingViewController: UIViewController {
             // Save Recording object
             let newRecording = Recording(url: recordingURL, title: title, duration: duration)
             self?.recordingController?.addRecording(recording: newRecording)
-            print(newRecording)
+            print(newRecording.url)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(saveAction)

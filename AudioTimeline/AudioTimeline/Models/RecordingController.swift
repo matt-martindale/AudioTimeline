@@ -15,6 +15,17 @@ class RecordingController {
         recordings.append(recording)
         saveToPersistentStore()
     }
+    
+    func deleteRecording(_ recording: Recording) {
+        if let recording = recordings.first(where: { $0.title == recording.title }) {
+            if let index = recordings.firstIndex(of: recording) {
+                recordings.remove(at: index)
+                saveToPersistentStore()
+            } else {
+                print("could not find recording: \(recording.title)")
+            }
+        }
+    }
 
     init() {
         loadFromPersistentStore()
