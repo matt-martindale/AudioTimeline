@@ -42,6 +42,7 @@ class RecordingViewController: UIViewController {
     weak var timer: Timer?
     var recordingURL: URL?
     var audioRecorder: AVAudioRecorder?
+    var recordingController: RecordingController?
 
     // MARK: - View Controller Lifecycles
     override func viewDidLoad() {
@@ -138,22 +139,9 @@ class RecordingViewController: UIViewController {
         timer = nil
     }
     
-    // MARK: - Playback
-    func prepareAudioSession() throws {
-        let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playAndRecord, options: [.defaultToSpeaker])
-        try session.setActive(true, options: []) // can fail if on a phone call, for instance
-    }
-    
     // MARK: - Recording
     var isRecording: Bool {
         audioRecorder?.isRecording ?? false
-    }
-    
-    func stopRecording() {
-        audioRecorder?.stop()
-        updateViews()
-        cancelTimer()
     }
     
     func requestPermissionOrStartRecording() {
@@ -213,11 +201,26 @@ class RecordingViewController: UIViewController {
             audioRecorder?.delegate = self
             audioRecorder?.isMeteringEnabled = true
             audioRecorder?.record()
+            
+            
+            
             updateViews()
             startTimer()
         } catch {
             preconditionFailure("The audio recorder could not be created with \(recordingURL!) and \(format): \(error)")
         }
+    }
+    
+    func stopRecording() {
+        audioRecorder?.stop()
+        updateViews()
+        cancelTimer()
+    }
+    
+    func prepareAudioSession() throws {
+        let session = AVAudioSession.sharedInstance()
+        try session.setCategory(.playAndRecord, options: [.defaultToSpeaker])
+        try session.setActive(true, options: []) // can fail if on a phone call, for instance
     }
     
     // MARK: - Playing
@@ -267,6 +270,11 @@ class RecordingViewController: UIViewController {
             play()
         }
     }
+    
+    @IBAction func saveButtonTapped(_ sender: Any) {
+        
+    }
+    
 }
 
 extension RecordingViewController: AVAudioRecorderDelegate {

@@ -36,7 +36,7 @@
                     <navigationItem key="navigationItem" title="Audio Comments" id="PJ5-eP-gGg">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="mic.fill" catalog="system" id="5Ny-KY-xAz">
                             <connections>
-                                <segue destination="q5g-GU-IQR" kind="presentation" id="xdk-kV-4go"/>
+                                <segue destination="q5g-GU-IQR" kind="presentation" identifier="RecordingSegue" id="xdk-kV-4go"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -93,7 +93,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2AN-Xj-8L7" userLabel="Time Elapsed Label">
                                         <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.77454607139999998" blue="0.35673667720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="EVm-x6-qWB" userLabel="Time Slider">
@@ -109,7 +109,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FR-Fu-NA0" userLabel="Time Remaining Label">
                                         <rect key="frame" x="348" y="0.0" width="46" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="0.77454607139999998" blue="0.35673667720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -147,6 +147,15 @@
                                     <constraint firstItem="dkx-HV-CZa" firstAttribute="width" secondItem="dkx-HV-CZa" secondAttribute="height" multiplier="1:1" id="xTC-un-5va"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ce9-Kp-HcX">
+                                <rect key="frame" x="360" y="20" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" red="1" green="0.77454607141864729" blue="0.35673667719409496" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="q5g-GU-IQR" eventType="touchUpInside" id="9Dr-Mz-tDf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -158,9 +167,11 @@
                             <constraint firstItem="BrT-eO-b2i" firstAttribute="top" secondItem="y2E-5d-i2i" secondAttribute="bottom" constant="20" id="POU-gf-rK5"/>
                             <constraint firstItem="hDl-0c-u0q" firstAttribute="centerX" secondItem="0vB-5P-86A" secondAttribute="centerX" id="SuW-LE-rVh"/>
                             <constraint firstItem="y2E-5d-i2i" firstAttribute="leading" secondItem="knf-YD-Doi" secondAttribute="leading" constant="10" id="ZlH-5B-HpM"/>
+                            <constraint firstItem="knf-YD-Doi" firstAttribute="trailing" secondItem="ce9-Kp-HcX" secondAttribute="trailing" constant="20" id="kUx-O4-d90"/>
                             <constraint firstAttribute="trailing" secondItem="y2E-5d-i2i" secondAttribute="trailing" constant="10" id="sRc-sQ-YMz"/>
                             <constraint firstItem="94b-d0-VXi" firstAttribute="leading" secondItem="knf-YD-Doi" secondAttribute="leading" id="tbu-o0-E1F"/>
                             <constraint firstItem="knf-YD-Doi" firstAttribute="bottom" secondItem="BrT-eO-b2i" secondAttribute="bottom" constant="20" id="vKS-dY-FvD"/>
+                            <constraint firstItem="ce9-Kp-HcX" firstAttribute="top" secondItem="knf-YD-Doi" secondAttribute="top" constant="20" id="zuH-2y-9sj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="knf-YD-Doi"/>
                     </view>

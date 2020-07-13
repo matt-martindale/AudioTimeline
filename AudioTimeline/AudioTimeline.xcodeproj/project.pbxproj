@@ -17,6 +17,8 @@
 		C906D20B24BBBE7500A2FC66 /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */; };
 		C906D20D24BBBEBB00A2FC66 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */; };
 		C906D21024BBCB8F00A2FC66 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20F24BBCB8F00A2FC66 /* UIColor+Extension.swift */; };
+		C906D21224BBD7AF00A2FC66 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D21124BBD7AF00A2FC66 /* Recording.swift */; };
+		C906D21524BBD85100A2FC66 /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D21424BBD85100A2FC66 /* RecordingController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
 		C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
 		C906D20F24BBCB8F00A2FC66 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C906D21124BBD7AF00A2FC66 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
+		C906D21424BBD85100A2FC66 /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 				C906D1FF24BBBAC700A2FC66 /* Info.plist */,
 				C906D20724BBBBEA00A2FC66 /* View Controllers */,
 				C906D20E24BBBED000A2FC66 /* Resources */,
+				C906D21324BBD83E00A2FC66 /* Models */,
 			);
 			path = AudioTimeline;
 			sourceTree = "<group>";
@@ -93,6 +98,15 @@
 				C906D20F24BBCB8F00A2FC66 /* UIColor+Extension.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		C906D21324BBD83E00A2FC66 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C906D21124BBD7AF00A2FC66 /* Recording.swift */,
+				C906D21424BBD85100A2FC66 /* RecordingController.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,8 +185,10 @@
 				C906D20624BBBBE300A2FC66 /* AudioCommentsTableViewController.swift in Sources */,
 				C906D1F224BBBAC500A2FC66 /* AppDelegate.swift in Sources */,
 				C906D20B24BBBE7500A2FC66 /* ListenViewController.swift in Sources */,
+				C906D21524BBD85100A2FC66 /* RecordingController.swift in Sources */,
 				C906D20D24BBBEBB00A2FC66 /* AudioVisualizer.swift in Sources */,
 				C906D1F424BBBAC500A2FC66 /* SceneDelegate.swift in Sources */,
+				C906D21224BBD7AF00A2FC66 /* Recording.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
