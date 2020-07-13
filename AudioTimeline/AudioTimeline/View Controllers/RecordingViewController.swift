@@ -76,12 +76,10 @@ class RecordingViewController: UIViewController {
     }
     
     func loadRecording(recording: Recording) {
-        let recordingURL: URL = recording.url
-        
+        let selectedRecordingURL = recording.url
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: recordingURL)
+            audioPlayer = try AVAudioPlayer(contentsOf: selectedRecordingURL)
         } catch {
-            print(recordingURL.absoluteString)
             preconditionFailure("Failure to load audio file: \(error)")
             
         }

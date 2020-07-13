@@ -14,7 +14,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Qn-1d-2b0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.04445590101522845" green="0.04445590101522845" blue="0.04445590101522845" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="1" green="0.77454607139999998" blue="0.35673667720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecordingCell" rowHeight="62" id="t02-dZ-IXb" customClass="RecordingTableViewCell" customModule="AudioTimeline" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="62"/>
@@ -29,13 +30,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOW-HD-yhJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="248" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-Wr-AIy">
                                                     <rect key="frame" x="289" y="0.0" width="46" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -47,6 +48,7 @@
                                         <constraint firstItem="x5I-eV-7RL" firstAttribute="leading" secondItem="JrY-gt-t9o" secondAttribute="leadingMargin" constant="10" id="tK2-e9-iO5"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.044455901020000001" green="0.044455901020000001" blue="0.044455901020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="durationLabel" destination="cRw-Wr-AIy" id="BTM-7e-Ylf"/>
                                     <outlet property="titleLabel" destination="yOW-HD-yhJ" id="eYK-Ch-XJs"/>
@@ -199,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bEM-MW-dtz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759" y="-304"/>
+            <point key="canvasLocation" x="1780" y="149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ahV-g8-jYJ">
@@ -209,6 +211,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="Jh5-Jv-lXj">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="1" green="0.77454607139999998" blue="0.35673667720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
