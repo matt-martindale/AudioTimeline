@@ -40,6 +40,7 @@ class RecordingViewController: UIViewController {
     }()
     
     weak var timer: Timer?
+    private var duration: String?
     var recordingURL: URL?
     var audioRecorder: AVAudioRecorder?
     var recordingController: RecordingController?
@@ -212,6 +213,8 @@ class RecordingViewController: UIViewController {
     }
     
     func stopRecording() {
+        guard let duration = timeRemainingLabel.text else { return }
+        self.duration = duration
         audioRecorder?.stop()
         updateViews()
         cancelTimer()
@@ -272,7 +275,29 @@ class RecordingViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        displaySaveAlert()
+    }
+    
+    func displaySaveAlert() {
+        let alert = UIAlertController(title: "Save Recording", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Title"
+        }
+        let saveAction = UIAlertAction(title: "Save", style: .default) { [weak self](_) in
+            guard let title = alert.textFields?[0].text,
+                let recordingURL = self?.recordingURL,
+                let duration = self?.duration else { return }
+            
+            // Save Recording object
+            let newRecording = Recording(url: recordingURL, title: title, duration: duration)
+            self?.recordingController?.addRecording(recording: newRecording)
+            print(newRecording)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
         
+        present(alert, animated: true, completion: nil)
     }
     
 }
