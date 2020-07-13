@@ -14,6 +14,11 @@ class AudioCommentsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTableView), name: .tableView, object: nil)
+    }
+    
+    @objc func updateTableView() {
+        tableView.reloadData()
     }
     
     // MARK: - Table view data source

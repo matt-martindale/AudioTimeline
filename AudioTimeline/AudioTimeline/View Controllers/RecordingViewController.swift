@@ -325,7 +325,11 @@ class RecordingViewController: UIViewController {
             // Save Recording object
             let newRecording = Recording(url: recordingURL, title: title, duration: duration)
             self?.recordingController?.addRecording(recording: newRecording)
-            print(newRecording.url)
+            
+            // Send notification to reload tableView
+            NotificationCenter.default.post(name: .tableView, object: nil)
+            
+            self?.dismiss(animated: true, completion: nil)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(saveAction)

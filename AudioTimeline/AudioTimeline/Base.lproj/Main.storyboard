@@ -71,22 +71,6 @@
             </objects>
             <point key="canvasLocation" x="902.89855072463774" y="148.66071428571428"/>
         </scene>
-        <!--Listen View Controller-->
-        <scene sceneID="q5R-Wc-nEU">
-            <objects>
-                <viewController id="Iey-6u-f48" customClass="ListenViewController" customModule="AudioTimeline" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Dea-5g-gVv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="rZ4-XN-rsd"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="vz3-fq-1ed"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a0X-xX-4ke" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1758" y="417"/>
-        </scene>
         <!--Recording View Controller-->
         <scene sceneID="j5P-2Z-mHW">
             <objects>

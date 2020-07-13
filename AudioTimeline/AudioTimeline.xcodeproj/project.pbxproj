@@ -14,12 +14,12 @@
 		C906D1FE24BBBAC700A2FC66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C906D1FC24BBBAC700A2FC66 /* LaunchScreen.storyboard */; };
 		C906D20624BBBBE300A2FC66 /* AudioCommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20524BBBBE300A2FC66 /* AudioCommentsTableViewController.swift */; };
 		C906D20924BBBCB800A2FC66 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20824BBBCB800A2FC66 /* RecordingViewController.swift */; };
-		C906D20B24BBBE7500A2FC66 /* ListenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */; };
 		C906D20D24BBBEBB00A2FC66 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */; };
 		C906D21024BBCB8F00A2FC66 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D20F24BBCB8F00A2FC66 /* UIColor+Extension.swift */; };
 		C906D21224BBD7AF00A2FC66 /* Recording.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D21124BBD7AF00A2FC66 /* Recording.swift */; };
 		C906D21524BBD85100A2FC66 /* RecordingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D21424BBD85100A2FC66 /* RecordingController.swift */; };
 		C906D21724BBEA1F00A2FC66 /* RecordingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D21624BBEA1F00A2FC66 /* RecordingTableViewCell.swift */; };
+		C906D21A24BBF86900A2FC66 /* Notification+Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = C906D21924BBF86900A2FC66 /* Notification+Name.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,12 +32,12 @@
 		C906D1FF24BBBAC700A2FC66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C906D20524BBBBE300A2FC66 /* AudioCommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCommentsTableViewController.swift; sourceTree = "<group>"; };
 		C906D20824BBBCB800A2FC66 /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
-		C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenViewController.swift; sourceTree = "<group>"; };
 		C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
 		C906D20F24BBCB8F00A2FC66 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C906D21124BBD7AF00A2FC66 /* Recording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recording.swift; sourceTree = "<group>"; };
 		C906D21424BBD85100A2FC66 /* RecordingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingController.swift; sourceTree = "<group>"; };
 		C906D21624BBEA1F00A2FC66 /* RecordingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingTableViewCell.swift; sourceTree = "<group>"; };
+		C906D21924BBF86900A2FC66 /* Notification+Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification+Name.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,6 @@
 			children = (
 				C906D20524BBBBE300A2FC66 /* AudioCommentsTableViewController.swift */,
 				C906D20824BBBCB800A2FC66 /* RecordingViewController.swift */,
-				C906D20A24BBBE7500A2FC66 /* ListenViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -99,6 +98,7 @@
 			children = (
 				C906D20C24BBBEBB00A2FC66 /* AudioVisualizer.swift */,
 				C906D20F24BBCB8F00A2FC66 /* UIColor+Extension.swift */,
+				C906D21924BBF86900A2FC66 /* Notification+Name.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -192,11 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C906D21024BBCB8F00A2FC66 /* UIColor+Extension.swift in Sources */,
+				C906D21A24BBF86900A2FC66 /* Notification+Name.swift in Sources */,
 				C906D21724BBEA1F00A2FC66 /* RecordingTableViewCell.swift in Sources */,
 				C906D20924BBBCB800A2FC66 /* RecordingViewController.swift in Sources */,
 				C906D20624BBBBE300A2FC66 /* AudioCommentsTableViewController.swift in Sources */,
 				C906D1F224BBBAC500A2FC66 /* AppDelegate.swift in Sources */,
-				C906D20B24BBBE7500A2FC66 /* ListenViewController.swift in Sources */,
 				C906D21524BBD85100A2FC66 /* RecordingController.swift in Sources */,
 				C906D20D24BBBEBB00A2FC66 /* AudioVisualizer.swift in Sources */,
 				C906D1F424BBBAC500A2FC66 /* SceneDelegate.swift in Sources */,
