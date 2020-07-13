@@ -16,15 +16,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="t02-dZ-IXb">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="RecordingCell" rowHeight="62" id="t02-dZ-IXb" customClass="RecordingTableViewCell" customModule="AudioTimeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="t02-dZ-IXb" id="JrY-gt-t9o">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="62"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="41" translatesAutoresizingMaskIntoConstraints="NO" id="x5I-eV-7RL">
+                                            <rect key="frame" x="30" y="19" width="335" height="24"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOW-HD-yhJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="248" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-Wr-AIy">
+                                                    <rect key="frame" x="289" y="0.0" width="46" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="x5I-eV-7RL" firstAttribute="centerY" secondItem="JrY-gt-t9o" secondAttribute="centerY" id="bAj-h9-YAR"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="x5I-eV-7RL" secondAttribute="trailing" constant="10" id="ea4-9h-bHA"/>
+                                        <constraint firstItem="x5I-eV-7RL" firstAttribute="leading" secondItem="JrY-gt-t9o" secondAttribute="leadingMargin" constant="10" id="tK2-e9-iO5"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Iey-6u-f48" kind="show" id="46n-co-hqr"/>
+                                    <outlet property="durationLabel" destination="cRw-Wr-AIy" id="BTM-7e-Ylf"/>
+                                    <outlet property="titleLabel" destination="yOW-HD-yhJ" id="eYK-Ch-XJs"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -180,6 +205,7 @@
                         <outlet property="audioVisualizer" destination="94b-d0-VXi" id="wEG-G2-O9H"/>
                         <outlet property="playButton" destination="dkx-HV-CZa" id="ClZ-F5-skQ"/>
                         <outlet property="recordButton" destination="S9m-TP-gm0" id="hj6-uh-Tkj"/>
+                        <outlet property="saveButton" destination="ce9-Kp-HcX" id="PFv-u8-yys"/>
                         <outlet property="timeElapsedLabel" destination="2AN-Xj-8L7" id="1hV-qU-RpD"/>
                         <outlet property="timeRemainingLabel" destination="8FR-Fu-NA0" id="rzR-YZ-uuO"/>
                         <outlet property="timeSlider" destination="EVm-x6-qWB" id="E7M-Lp-RPS"/>

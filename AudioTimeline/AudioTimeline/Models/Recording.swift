@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Recording {
+struct Recording: Codable {
     var url: URL
     var title: String
     var duration: String

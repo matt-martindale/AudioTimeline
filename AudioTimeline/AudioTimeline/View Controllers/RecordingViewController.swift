@@ -18,6 +18,7 @@ class RecordingViewController: UIViewController {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var audioVisualizer: AudioVisualizer!
+    @IBOutlet weak var saveButton: UIButton!
     
     // MARK: - Properties
     var audioPlayer: AVAudioPlayer? {
@@ -49,6 +50,7 @@ class RecordingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpViews()
+        print(recordingController?.recordings)
     }
     
     func setUpViews() {
@@ -80,6 +82,7 @@ class RecordingViewController: UIViewController {
     func updateViews() {
         playButton.isEnabled = !isRecording
         recordButton.isEnabled = !isPlaying
+        saveButton.isEnabled = !isRecording
         timeSlider.isEnabled = !isRecording
         
         playButton.isSelected = isPlaying
